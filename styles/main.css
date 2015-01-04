@@ -1,0 +1,26 @@
+html, body { background: #e8eaf6; margin: 0; padding: 0; font-family: "Ubuntu"; }
+section.gameDetails { box-shadow: 0px 0px 2px rgba(0,0,0,0.2); background: #64b5f6; height:200px; width:100%; }
+      section.gameDetails .points { color: #fff; padding:10px; font-size:20px; }
+section.game { box-shadow: 0px 0px 5px rgba(0,0,0,0.2); padding:20px; background: #fff; width: 416px; position:absolute; left:50%; margin-left:-220px; top:20px; }
+
+.control { float:left; position:relative; margin: 0 auto; width:125px; margin-top:20px; left:50%; margin-left: -62px; }
+      .control button { cursor: pointer; border-radius:50%; padding:20px 0; width:40px; background: #1565c0; color:#fff; line-height:0; outline: 0; border: 0; margin-left:40px; box-shadow: 0px 0px 2px rgba(0,0,0,0.5); }
+      .control button.left { margin-left: 0; }
+      .control button:hover { background: #1976d2; }
+      .control button:active { box-shadow: 0px 0px 5px rgba(0,0,0,0.5) inset; }
+
+.line { }
+.g2048 { width: 416px /* 220px */; margin:0 auto; font-family: "Ubuntu Mono"; border:0; margin:0; }
+
+.field { font-weight:bold; padding: 50px 0; float:left; margin: 2px; background:#ccc; line-height:0; font-size: 12px; width:100px; text-align: center; border-radius:5px; }
+.field.p0 { background: #fff3e0; }
+.field.p2 { background: #fff9c4; }
+.field.p4 { background: #fff176; }
+.field.p8 { background: #ffcc80; }
+.field.p16 { background: #ff8a65; }
+.field.p32 { background: #ff7043; }
+.field.p64 { background: #ff5722; }
+.field.p128 { background: #ffeb3b; }
+.field.p256 { background: #fdd835; }
+.field.p512 { background: #ffca28; }
+.field.p1024 { background: #ffc107; }
