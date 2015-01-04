@@ -9,7 +9,7 @@ var G2048 = function(g2048Class)
 {
     var self = this;
 
-    var fields       = [1024,1024,1024,1024,0,0,0,0,0,0,0,0,0,0,0,0];// game over: [8,2,8,16,2,128,2,128,4,8,16,4,8,2,32,2];
+    var fields       = []; //[1024,1024,1024,1024,0,0,0,0,0,0,0,0,0,0,0,0];// game over: [8,2,8,16,2,128,2,128,4,8,16,4,8,2,32,2];
     var consoleOn    = false;
     var width        = 4;
     var height       = 4;
@@ -220,6 +220,8 @@ var G2048 = function(g2048Class)
             if (moved == true) {
                 self.newValue();
             }//end if
+
+            view.onAfterMove();
         } else {
             return false;
         }//end if
@@ -346,6 +348,7 @@ G2048.View = function(g2048Class, oG2048) {
     var g2048Selector = '';
     var lineSelector  = '';
     var fieldSelector = '';
+    var afterMove     = '';
 
     /**
      * Setters.
@@ -353,9 +356,17 @@ G2048.View = function(g2048Class, oG2048) {
     this.setRowClass   = function(r) { lineClass = r; };
     this.setFieldClass = function(f) { fieldClass = f; };
 
-    this.onAfterMove = function(game, fn) {
-        fn(game);
-    }//end onAfterMove();
+    this.setOnAfterMove = function(fn) {
+        afterMove = fn;
+    }//end setOnAfterMove();
+
+
+    this.onAfterMove = function()
+    {
+        afterMove(oG2048);
+
+    }//end doAfterMove()
+
 
     this.updateField = function(fieldKey, value, newOne)
     {
