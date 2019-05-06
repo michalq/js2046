@@ -7,7 +7,8 @@ section.game { box-shadow: 0px 0px 5px rgba(0,0,0,0.2); padding:20px; background
       .control button { cursor: pointer; border-radius:50%; padding:20px 0; width:40px; background: #1565c0; color:#fff; line-height:0; outline: 0; border: 0; margin-left:40px; box-shadow: 0px 0px 2px rgba(0,0,0,0.5); }
       .control button.left { margin-left: 0; }
       .control button:hover { background: #1976d2; }
-      .control button:active { box-shadow: 0px 0px 5px rgba(0,0,0,0.5) inset; }
+      .control button:active,
+      .control button.active { box-shadow: 0px 0px 5px rgba(0,0,0,0.5) inset; }
 
 .line { }
 .g2048 { width: 416px /* 220px */; margin:0 auto; font-family: "Ubuntu Mono"; border:0; margin:0; }
@@ -24,3 +25,4 @@ section.game { box-shadow: 0px 0px 5px rgba(0,0,0,0.2); padding:20px; background
 .field.p256 { background: #fdd835; }
 .field.p512 { background: #ffca28; }
 .field.p1024 { background: #ffc107; }
+.field.p2048 { background: #ffc107; }

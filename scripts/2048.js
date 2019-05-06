@@ -9,7 +9,7 @@ var G2048 = function(g2048Class)
 {
     var self = this;
 
-    var fields       = []; //[1024,1024,1024,1024,0,0,0,0,0,0,0,0,0,0,0,0];// game over: [8,2,8,16,2,128,2,128,4,8,16,4,8,2,32,2];
+    var fields       = [];// game over: [8,2,8,16,2,128,2,128,4,8,16,4,8,2,32,2];
     var consoleOn    = false;
     var width        = 4;
     var height       = 4;
@@ -72,8 +72,6 @@ var G2048 = function(g2048Class)
                 console.info('Random key:', randomField, 'Random empty key:', emptyFields[randomField], 'Random value', randomVal);
             }//end if
 
-        } else {
-            checkIfGameOver();
         }//end if
 
     };//end newValue()
@@ -87,6 +85,7 @@ var G2048 = function(g2048Class)
     var checkIfGameOver = function()
     {
         var emptyFields = self.getEmptyFields();
+
         if (emptyFields.length == 0
             && self.move(0, true) == false
             && self.move(1, true) == false
@@ -128,6 +127,7 @@ var G2048 = function(g2048Class)
     this.move = function(direction, test) {
         if (typeof test == 'undefined') test = false;
         if (gameStatus == false) {
+            view.onAfterMove();
             if (consoleOn == true && test == false) {
                 console.info('Game end with '+ points +' points.');
             }//end if
@@ -221,6 +221,7 @@ var G2048 = function(g2048Class)
                 self.newValue();
             }//end if
 
+            checkIfGameOver();
             view.onAfterMove();
         } else {
             return false;
@@ -363,7 +364,9 @@ G2048.View = function(g2048Class, oG2048) {
 
     this.onAfterMove = function()
     {
-        afterMove(oG2048);
+        if (typeof afterMove == 'function') {
+            afterMove(oG2048);
+        }//end if
 
     }//end doAfterMove()
 

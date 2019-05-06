@@ -3,7 +3,7 @@ $(document).ready(function(){
     game.setWidth(4); // Optional, default '4', grid width.
     game.setHeight(4); // Optional, default '4', grid height.
     game.setConsole(true); // Optional, default 'false', messages in browser console.
-    game.setStopAt(4096); // Optional, default 2048.
+    game.setStopAt(2048); // Optional, default 2048.
     game.getView().setRowClass('line');  // Optional, default 'line'.
     game.getView().setFieldClass('field'); // Optional, default 'field'.
     game.init();
@@ -31,6 +31,5 @@ $(document).ready(function(){
             case 40: game.move(3); break;
         }//end switch()
     });
-
 
 });

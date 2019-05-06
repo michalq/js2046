@@ -5,8 +5,8 @@
         <meta charset="utf-8" />
         <script src="./scripts/jquery-2.1.3.min.js"></script>
         <link rel="stylesheet" href="./styles/main.css" />
-        <script src="scripts/2048.js"></script>
-        <script src="scripts/main.js"></script>
+        <script src="./scripts/2048.js"></script>
+        <script src="./scripts/main.js"></script>
     </head>
     <body>
 
